@@ -6,6 +6,7 @@ export interface AppConfig {
     colorScheme: string;
     theme: string;
     ripple: boolean;
+    showCase: boolean;
     menuMode: string;
     scale: number;
 }
@@ -25,6 +26,7 @@ interface LayoutState {
 export class LayoutService {
 
     config: AppConfig = {
+        showCase: true,
         ripple: false,
         inputStyle: 'outlined',
         menuMode: 'static',

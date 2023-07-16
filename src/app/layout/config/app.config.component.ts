@@ -54,11 +54,21 @@ export class AppConfigComponent {
         this.layoutService.config.ripple = _val;
     }
 
+    get showCase(): boolean {
+        return this.layoutService.config.showCase;
+    }
+
+    set showCase(_val: boolean) {
+        this.layoutService.config.showCase = _val;
+    }
+
+
     onConfigButtonClick() {
         this.layoutService.showConfigSidebar();
     }
 
     changeTheme(theme: string, colorScheme: string) {
+        console.log(theme);
         const themeLink = <HTMLLinkElement>document.getElementById('theme-css');
         const newHref = themeLink.getAttribute('href')!.replace(this.layoutService.config.theme, theme);
         this.layoutService.config.colorScheme
