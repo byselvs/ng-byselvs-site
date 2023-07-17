@@ -4,6 +4,7 @@ import { NotfoundComponent } from './demo/components/notfound/notfound.component
 import { AppLayoutComponent } from "./layout/app.layout.component";
 import {HomeComponent} from "./home/home.component";
 import {environment} from "../environments/environment";
+import {ShowcaseGuard} from "./guards/showcase.guard";
 
 @NgModule({
     imports: [
@@ -12,7 +13,7 @@ import {environment} from "../environments/environment";
                 path: '', component: AppLayoutComponent,
                 children: [
                     { path: '', component: HomeComponent},
-                    { path: 'dashboard', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule)},
+                    { path: 'dashboard', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule), canActivate: [ShowcaseGuard]},
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
                     { path: 'utilities', loadChildren: () => import('./demo/components/utilities/utilities.module').then(m => m.UtilitiesModule)},
                     { path: 'documentation', loadChildren: () => import('./demo/components/documentation/documentation.module').then(m => m.DocumentationModule) },
