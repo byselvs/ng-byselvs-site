@@ -9,6 +9,8 @@
         </div>
         <app-footer></app-footer>
     </div>
-    <app-config></app-config>
+    <ng-template [ngIf]="layoutService.config.showCase">
+        <app-config></app-config>
+    </ng-template>
     <div class="layout-mask"></div>
 </div>
