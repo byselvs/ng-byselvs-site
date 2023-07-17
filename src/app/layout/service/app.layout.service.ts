@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import {environment} from "../../../environments/environment";
 
 export interface AppConfig {
     inputStyle: string;
@@ -26,7 +27,7 @@ interface LayoutState {
 export class LayoutService {
 
     config: AppConfig = {
-        showCase: true,
+        showCase: environment.showCase,
         ripple: false,
         inputStyle: 'outlined',
         menuMode: 'static',
