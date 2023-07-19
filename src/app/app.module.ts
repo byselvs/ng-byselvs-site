@@ -12,6 +12,8 @@ import { IconService } from './demo/service/icon.service';
 import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { HomeComponent } from './home/home.component';
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import { HomeComponent } from './home/home.component';
     ],
     imports: [
         AppRoutingModule,
-        AppLayoutModule
+        AppLayoutModule,
+        ButtonModule,
+        RippleModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
